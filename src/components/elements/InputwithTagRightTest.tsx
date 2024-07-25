@@ -37,6 +37,7 @@ export default function InputwithTagRightTest({
                     type={type}
                     placeholder={placeholder ? placeholder : "Type here ..."}
                     {...field}
+                    id={name}
                     className={cn(
                       classNameInput,
                       " rounded focus-visible:ring-0 rounded-r-none placeholder:text-gray-400 placeholder:font-normal placeholder:font-poppins placeholder:text-sm border-gray-150"

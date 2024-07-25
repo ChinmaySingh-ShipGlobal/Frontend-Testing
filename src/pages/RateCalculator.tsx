@@ -134,7 +134,10 @@ export default function RateCalculator() {
                                     </Label>
                                     <div className="mt-2">
                                       <Select onValueChange={field.onChange}>
-                                        <SelectTrigger className="ring-blue-50 font-normal text-sm h-9">
+                                        <SelectTrigger
+                                          className="ring-blue-50 font-normal text-sm h-9"
+                                          id="country"
+                                        >
                                           <SelectValue placeholder="Select" />
                                         </SelectTrigger>
                                         <SelectContent>
