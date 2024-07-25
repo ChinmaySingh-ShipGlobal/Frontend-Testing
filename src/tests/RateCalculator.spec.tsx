@@ -6,9 +6,9 @@ import configureStore from "redux-mock-store";
 //TESTCASES
 //TESTCASE -> Five input fields are present, Two buttons are present
 //TESTCASE ->Form fields empty initially
+//TESTCASE ->If data is entered, the field is not empty
 //TESTCASE -> Input fields receive data on form submission
 //TESTCASE -> Input fields data type
-//TESTCASE ->If data is entered, the field is not empty
 
 describe("RateCalculator", () => {
   //defining a mock store for using redux
@@ -94,13 +94,12 @@ describe("RateCalculator", () => {
     fireEvent.change(widthInput, { target: { value: "30" } });
     fireEvent.change(heightInput, { target: { value: "40" } });
 
+    fireEvent.click(screen.getByRole("button", { name: "Calculate" }));
     expect(pincodeInput.value).toBe("123456");
     expect(weightInput.value).toBe("10");
     expect(lengthInput.value).toBe("20");
     expect(widthInput.value).toBe("30");
     expect(heightInput.value).toBe("40");
-
-    fireEvent.click(screen.getByRole("button", { name: "Calculate" }));
   });
 
   //TESTCASE -> Input fields data type
@@ -147,7 +146,5 @@ describe("RateCalculator", () => {
     expect(lengthInput.value).not.toBe("");
     expect(widthInput.value).not.toBe("");
     expect(heightInput.value).not.toBe("");
-
-    fireEvent.click(screen.getByRole("button", { name: "Calculate" }));
   });
 });
